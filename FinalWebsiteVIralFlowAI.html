@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViralFlow AI - AI-Powered Growth for Creators</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Manrope:wght@400;500&display=swap');
+
+        :root {
+            --primary-color: #FAFAFA;
+            --secondary-color: #ffffff;
+            --accent-color: #FF6B6B;
+            --text-dark: #222;
+            --border-color: #E0E0E0;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-color);
+            color: var(--text-dark);
+            text-align: center;
+        }
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .hero {
+            background: var(--secondary-color);
+            padding: 80px 20px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 60px 20px;
+        }
+        .btn {
+            background: transparent;
+            color: var(--text-dark);
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 20px;
+            border: 2px solid var(--accent-color);
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: linear-gradient(135deg, var(--accent-color), #FF8C8C);
+            color: white;
+        }
+        .features {
+            background: var(--secondary-color);
+            padding: 80px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .features:hover {
+            transform: translateY(-5px);
+        }
+        .feature-list {
+            text-align: left;
+            max-width: 600px;
+            margin: auto;
+        }
+        .feature-list h3 {
+            color: var(--accent-color);
+            letter-spacing: 0.5px;
+        }
+        .waitlist-form input {
+            padding: 14px;
+            width: 80%;
+            max-width: 320px;
+            margin: 10px;
+            border-radius: 50px;
+            border: 2px solid var(--border-color);
+            font-size: 16px;
+        }
+        .waitlist-form button {
+            padding: 14px 28px;
+            background: transparent;
+            color: var(--text-dark);
+            border: 2px solid var(--accent-color);
+            cursor: pointer;
+            border-radius: 50px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        .waitlist-form button:hover {
+            background: linear-gradient(135deg, var(--accent-color), #FF8C8C);
+            color: white;
+        }
+        .cta {
+            position: relative;
+            padding-bottom: 80px;
+        }
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .floating-cta:hover {
+            background: #FF8C8C;
+        }
+         .popup {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: var(--secondary-color);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+        .popup a {
+            display: block;
+            text-decoration: none;
+            color: var(--text-dark);
+            padding: 5px 0;
+        }
+        .popup a:hover {
+            color: var(--accent-color);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>ViralFlow AI</h1>
+        <p>AI-Powered Growth for Creators – Automate, Engage, and Go Viral</p>
+        <a href="#waitlist" class="btn">Join the Waitlist</a>
+    </div>
+    
+    <div class="container features">
+        <h2>Why ViralFlow AI?</h2>
+        <div class="feature-list">
+            <h3>⚡ AI-Powered Content & Engagement</h3>
+            <p>✅ Multi-Platform AI Content Generator</p>
+            <p>✅ AI-Generated Viral Hooks & Captions</p>
+            <p>✅ AI-Powered Comment Engine</p>
+            <p>✅ Smart DM Outreaches</p>
+            
+            <h3>📊 Advanced Trend & Growth Insights</h3>
+            <p>✅ AI Competitor Analysis</p>
+            <p>✅ Niche-Based Trend Forecasting</p>
+            <p>✅ AI-Powered Audience Segmentation</p>
+            <p>✅ Hashtag & Topic Optimization</p>
+            
+            <h3>🛠️ Ultimate Automation & Productivity</h3>
+            <p>✅ Auto-Rewrite & Repurpose Content</p>
+            <p>✅ AI-Powered Auto-Threads & Carousels</p>
+            <p>✅ Engagement Heatmaps & Best Time to Post</p>
+            <p>✅ Multi-Account Management</p>
+        </div>
+    </div>
+    
+    <div class="container cta" id="waitlist">
+        <h2>Join the Waitlist</h2>
+        <form class="waitlist-form" id="waitlistForm">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="submit">Join Now</button>
+        </form>
+        <p id="successMessage" style="display:none; color: var(--accent-color); margin-top: 10px;">Thank you for signing up!</p>
+    </div>
+    
+   <div class="floating-cta" onclick="togglePopup()">
+        Contact Us
+    </div>
+   <div class="popup" id="contactPopup">
+        <a href="mailto:your-elcserve@example.com">Email</a>
+        <a href="https://x.com/manan_purani" target="_blank">Twitter</a>
+        <a href="https://www.instagram.com/mananpurani/" target="_blank">Instagram</a>
+    </div>
+    <br><br><br>
+
+    
+    <script>
+        document.getElementById("waitlistForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let email = document.getElementById("email").value;
+            if (email) {
+                localStorage.setItem("waitlistEmail", email);
+                document.getElementById("successMessage").style.display = "block";
+                document.getElementById("email").value = "";
+            }
+        });
+        function togglePopup() {
+            var popup = document.getElementById("contactPopup");
+            popup.style.display = popup.style.display === "block" ? "none" : "block";
+        }
+
+    </script>
+</body>
+</html>
